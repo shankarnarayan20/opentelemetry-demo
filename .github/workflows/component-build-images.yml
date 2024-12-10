@@ -39,10 +39,11 @@ jobs:
   build_and_push_images:
     runs-on: ubuntu-latest
     needs: protobufcheck
-
+    
     permissions:
       contents: read
       packages: write
+      id-token: write
 
     env:
       RELEASE_VERSION: "${{ github.event.release.tag_name }}"
@@ -214,4 +215,3 @@ jobs:
             ${{ inputs.ghcr_repo }}:latest-${{ matrix.file_tag.tag_suffix }}
           cache-from: type=gha
           cache-to: type=gha
-          
