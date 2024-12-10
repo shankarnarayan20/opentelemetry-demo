@@ -122,4 +122,4 @@ jobs:
         run: |
           for COMPONENT in "accountingservice" "adservice" "cartservice" "checkoutservice" "currencyservice" "emailservice" "featureflagservice" "frauddetectionservice" "frontend" "inventoryservice" "loadgenerator" "paymentservice" "productcatalogservice" "quoteservice" "recommendationservice" "shippingservice"; do
             kubectl rollout undo deployment/$COMPONENT -n otel-demo
-          done
+          done 
